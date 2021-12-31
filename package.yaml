@@ -23,6 +23,11 @@ dependencies:
 - base >= 4.7 && < 5
 - scalpel
 - regex-base
+- http-client
+- http-client-tls
+- http-types
+- bytestring
+- data-default
 
 library:
   source-dirs: src
