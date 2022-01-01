@@ -29,6 +29,7 @@ dependencies:
 - bytestring
 - data-default
 - webdriver
+- text
 
 library:
   source-dirs: src
