@@ -41,10 +41,4 @@ getCommentDiv url = do
                         comments = chroots (TagString "div" @: [hasClass "Comment" ] ) spanScraper
                         spanScraper :: Scraper String String
                         spanScraper = text $ tagSelector "span"
-
--- getComments url = scrapeURL url comments
---             where 
---                 comments = chroot 
---                             (TagString "div" @: [hasClass "Comment" ] ) 
---                             $ inSerial do 
-                                
+                                           

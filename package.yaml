@@ -28,6 +28,7 @@ dependencies:
 - http-types
 - bytestring
 - data-default
+- webdriver
 
 library:
   source-dirs: src
