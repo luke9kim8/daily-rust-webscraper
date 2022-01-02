@@ -20,3 +20,15 @@ Getting this error when i tried upgrading selenium server .jar to 4.1.1. SO says
 ```
  Could not start a new session. Response code 500. Message: Capability 'proxy' could not be honored
 ```
+
+Even with ff 92.1 doesn't work it still shows 'continue this thread'. Need to explicitly navigate to this link using scalpel.
+
+### 1/3/2022
+I found this in Real World Haskell,
+```
+ It's not responsible for obtaining the data to parse, just for the actual parsing. 
+ This is a common approach in Haskell programs. By separating the reading of the data 
+ from what we subsequently do with it, we gain flexibility in where we take the data from.
+```
+I should scrape the raw data via Python and focus on parsing raw HTML with `scalpel`.
+
