@@ -13,6 +13,10 @@ We can now scroll till the end of the comment section, but now the comments are 
 
 My next thought was to specify the path to selenium driver to webdriver browser as specified [here](https://hackage.haskell.org/package/webdriver-0.9.0.1/docs/Test-WebDriver-Capabilities.html#t:HasCapabilities). You can install the selenium driver from the selenium webpage, search for geckodriver in google.
 
-Turns out using `geckodriver` as a browser binary does not work. I have to use the actual firefox binary, which is located in `/Applications/Firefox.app/Contents/MacOS/firefox-bin`
+### 1/2/2022
+Turns out using `geckodriver` as a browser binary does not work. I have to use the actual firefox binary, which is located in `/Applications/Firefox.app/Contents/MacOS/firefox-bin`. 
 
-
+Getting this error when i tried upgrading selenium server .jar to 4.1.1. SO says that I may be getting errors because FF and selenium version don't match.
+```
+ Could not start a new session. Response code 500. Message: Capability 'proxy' could not be honored
+```
