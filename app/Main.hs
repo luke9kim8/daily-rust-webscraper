@@ -4,6 +4,4 @@ import Lib
 import Temp
 
 main :: IO ()
-main = do 
-  res <- run
-  print res
+main = someFunc

@@ -28,3 +28,5 @@ run = runSession defaultConfig  $ do
   body <- findElem $ ByTag "body"
   replicateM_ 10000 (sendKeys "arrowDown" body)
   getSource
+
+scrollTillEnd = WD a

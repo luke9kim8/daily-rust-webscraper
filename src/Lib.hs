@@ -14,6 +14,11 @@ import qualified Network.HTTP.Types.Header as HTTP
 someFunc :: IO ()
 someFunc = do 
             res <- getCommentDiv targetUrl
+            body <- getBodyHTML targetUrl
+            case body of 
+              Just html -> do 
+                print html
+              Nothing -> print "No result"
             case res of 
                 Just a -> do 
                     print a
@@ -37,8 +42,12 @@ getCommentDiv url = do
                     manager <- Just <$> HTTP.newManager managerSettings
                     scrapeURLWithConfig (def { manager = manager }) url comments
                     where 
-                        comments :: Scraper String [String]
-                        comments = chroots (TagString "div" @: [hasClass "Comment" ] ) spanScraper
-                        spanScraper :: Scraper String String
-                        spanScraper = text $ tagSelector "span"
+                      comments :: Scraper String [String]
+                      comments = chroots (TagString "div" @: [hasClass "Comment" ] ) spanScraper
+                      spanScraper :: Scraper String String
+                      spanScraper = text $ tagSelector "span"
                                            
+getBodyHTML :: URL -> IO (Maybe String)
+getBodyHTML url = do 
+                  let body = innerHTML "body"
+                  scrapeURL url body

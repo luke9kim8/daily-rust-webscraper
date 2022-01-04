@@ -32,3 +32,4 @@ I found this in Real World Haskell,
 ```
 I should scrape the raw data via Python and focus on parsing raw HTML with `scalpel`.
 
+### 1/4/2022
