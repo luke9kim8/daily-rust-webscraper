@@ -29,4 +29,10 @@ run = runSession defaultConfig  $ do
   replicateM_ 10000 (sendKeys "arrowDown" body)
   getSource
 
-scrollTillEnd = WD a
+whileM :: m Bool -> m a -> m ()
+whileM cond body = w 
+  where w = do
+    cont <- cond 
+    if cont 
+      then body >> w 
+      else pure ()
