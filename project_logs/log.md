@@ -32,4 +32,5 @@ I found this in Real World Haskell,
 ```
 I should scrape the raw data via Python and focus on parsing raw HTML with `scalpel`.
 
-### 1/4/2022
+### 1/6/2022
+Next step is to send downarrow key until we see the "more posts from r/rust" so that we know we are at the end of the comment section.
