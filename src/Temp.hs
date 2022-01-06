@@ -11,6 +11,7 @@ import Test.WebDriver.Session (WDSessionState(getSession))
 import Test.WebDriver.JSON (ignoreReturn)
 import Test.WebDriver.Common.Keys (arrowDown)
 import Control.Monad (replicateM_)
+import Control.Monad.Loops
 import qualified System.IO as SIO
 
 firefoxConfig :: WDConfig
@@ -27,12 +28,5 @@ run = runSession defaultConfig  $ do
   openPage "https://www.reddit.com/r/rust/comments/rkjf0e/hey_rustaceans_got_an_easy_question_ask_here/" 
   body <- findElem $ ByTag "body"
   replicateM_ 10000 (sendKeys "arrowDown" body)
+  -- whileM_ 
   getSource
-
-whileM :: m Bool -> m a -> m ()
-whileM cond body = w 
-  where w = do
-    cont <- cond 
-    if cont 
-      then body >> w 
-      else pure ()

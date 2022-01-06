@@ -30,6 +30,7 @@ dependencies:
 - data-default
 - webdriver
 - text
+- monad-loops
 
 library:
   source-dirs: src

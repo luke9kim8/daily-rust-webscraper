@@ -38,6 +38,7 @@ library
     , http-client
     , http-client-tls
     , http-types
+    , monad-loops
     , regex-base
     , scalpel
     , text
@@ -58,6 +59,7 @@ executable webscraper-exe
     , http-client
     , http-client-tls
     , http-types
+    , monad-loops
     , regex-base
     , scalpel
     , text
@@ -80,6 +82,7 @@ test-suite webscraper-test
     , http-client
     , http-client-tls
     , http-types
+    , monad-loops
     , regex-base
     , scalpel
     , text
