@@ -34,3 +34,6 @@ I should scrape the raw data via Python and focus on parsing raw HTML with `scal
 
 ### 1/6/2022
 Next step is to send downarrow key until we see the "more posts from r/rust" so that we know we are at the end of the comment section.
+
+### 1/7/2022
+Looked into monad rules
