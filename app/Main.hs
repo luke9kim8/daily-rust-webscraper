@@ -4,4 +4,6 @@ import Lib
 import Temp
 
 main :: IO ()
-main = someFunc
+main = do
+  run 
+  return ()

@@ -19,14 +19,13 @@ firefoxConfig = defaultConfig
 
 chromeConfig :: WDConfig
 chromeConfig = useBrowser chr defaultConfig
-  { wdHost = "127.0.0.1", wdPort = 4444 }
-  where 
-    chr = Firefox Nothing LogInfo (Just "/Applications/Firefox.app/Contents/MacOS/firefox-bin") Nothing
-
-
-run = runSession defaultConfig  $ do
+  { wdHost = "0.0.0.0", wdPort = 4444, wdHTTPRetryCount = 50 }
+  where chr = chrome
+run = runSession chromeConfig  $ do
   openPage "https://www.reddit.com/r/rust/comments/rkjf0e/hey_rustaceans_got_an_easy_question_ask_here/" 
   body <- findElem $ ByTag "body"
   replicateM_ 10000 (sendKeys "arrowDown" body)
   -- whileM_ 
   getSource
+
+
